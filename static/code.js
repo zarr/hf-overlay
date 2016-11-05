@@ -1,5 +1,5 @@
 angular.module('overlayApp', [])
-    .controller('IntervieweeController', function(socket) {
+    .controller('IntervieweeController', function($http, socket) {
         var interviewee = this;
         interviewee.interviewee = {
             name: "Mikko",
@@ -9,7 +9,11 @@ angular.module('overlayApp', [])
             interviewee.in = !interviewee.in;
         };
         socket.on('message', function (msg) {
-            if ("interview" == msg) {
+            if ("interview" == msg.scene) {
+                console.log("show id ", msg.id);
+                $http.get('person/' + msg.id).success(function (data, status, headers) {
+                    interviewee.interviewee = data;
+                });
                 interviewee.enter();
             }
         })
@@ -30,7 +34,7 @@ angular.module('overlayApp', [])
             caster.in = !caster.in;
         }
         socket.on('message', function (msg) {
-            if ("casters" == msg) {
+            if ("casters" == msg.scene) {
                 caster.enter();
             }
         })
@@ -41,6 +45,7 @@ angular.module('overlayApp', [])
             on: function (eventName, callback) {
                 socket.on(eventName, function () {
                     var args = arguments;
+                    console.log('got message: ', eventName, ' arguments: ', args);
                     $rootScope.$apply(function () {
                         callback.apply(socket, args);
                     });

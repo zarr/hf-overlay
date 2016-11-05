@@ -38,7 +38,21 @@ app.get('/persons', function (req, res) {
       res.send(result);
     })
   });
-})
+});
+
+app.get('/person/:personId', function (req, res) {
+  console.log('find person', req.params.personId);
+  MongoClient.connect(url, function (err, db) {
+    if (err) throw err;
+
+    db.collection('persons').findOne({"_id": new ObjectId(req.params.personId)}, function (err, result) {
+      if (err) throw err;
+
+      console.log(result);
+      res.send(result);
+    })
+  });
+});
 
 app.post('/persons', function (req, res) {
   console.log('body ', req.body);
@@ -53,6 +67,6 @@ app.post('/persons', function (req, res) {
         });
     db.close();
   });
-})
+});
 
 

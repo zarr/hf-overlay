@@ -3,23 +3,21 @@
 <head>
     <script src="/lib/angular/angular.js"></script>
     <script src="/lib/socket.io-client/socket.io.js"></script>
+    <script src="control.js"></script>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-<div class=control_panel>
-    <div class="toggle_btn" onclick=send_msg('interview')>
-        Interview
+<div ng-controller="ControlController as data" class=control_panel>
+    <select ng-model="data.interviewPerson">
+        <option ng-repeat="option in data.persons" value="{{option._id}}">{{option.name}} // {{option.title}}</option>
+    </select>
+    <div>
+        <button ng-click="data.emit('interview', data.interviewPerson)">Interview</button>
     </div>
-    <div class="toggle_btn" onclick=send_msg('casters')>
-        Casters
+    <div>
+        <button ng-click="data.emit('casters')">Casters</button>
     </div>
 </div>
-<script>
-    var socket = io();
 
-    var send_msg = function(msg) {
-        socket.send(msg)
-    }
-</script>
 </body>
 </html>
