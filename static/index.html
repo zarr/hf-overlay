@@ -31,9 +31,11 @@
 </div>
 <script>
     var socket = io();
-    socket.on('toggle', function(x) {
-        console.log("niimpä");
-        toggle();
+    socket.on('message', function(x) {
+        console.log(x);
+        if(x === "toggle") {
+            toggle();
+        }
     })
 </script>
 </body>

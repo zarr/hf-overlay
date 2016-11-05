@@ -5,10 +5,11 @@ var io = require('socket.io')(http)
 
 io.on('connection', function(socket) {
   console.log('a user connected');
-  setInterval(function() {
-    console.log("Sending toggle")
-    socket.emit('toggle');
-  }, 500 );
+
+  socket.on('message', function(msg){
+    console.log("Relaying ", msg)
+    io.emit('message', msg);
+  });
 })
 
 http.listen(3000, function () {

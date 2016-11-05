@@ -1,0 +1,22 @@
+<!doctype html>
+<html ng-app="overlayApp">
+<head>
+    <script src="/lib/angular/angular.js"></script>
+    <script src="/lib/socket.io-client/socket.io.js"></script>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div class=control_panel>
+    <div class="toggle_btn" onclick=send_toggle()>
+        Toggle
+    </div>
+</div>
+<script>
+    var socket = io();
+
+    var send_toggle = function() {
+        socket.send('toggle')
+    }
+</script>
+</body>
+</html>
