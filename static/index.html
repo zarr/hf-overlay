@@ -8,9 +8,25 @@
 </head>
 <body>
 <div ng-controller="IntervieweeController as data">
-    <div class="interviewee">
+    <button ng-click="data.enter()">push</button>
+    <div ng-class="{out: !data.in, in: data.in}" class="interviewee">
         <span>{{data.interviewee.name}}</span>
         <span>{{data.interviewee.title}}</span>
+    </div>
+</div>
+<div ng-controller="CasterController as data">
+    <button ng-click="data.enter()">push</button>
+    <div ng-class="{out: !data.in, in: data.in}" class="caster">
+        <div class="caster1">
+            <span>{{data.caster1.name}}</span>
+            <span>{{data.caster1.nick}}</span>
+            <span>{{data.caster1.tag}}</span>
+        </div>
+        <div class="caster2">
+            <span>{{data.caster2.name}}</span>
+            <span>{{data.caster2.nick}}</span>
+            <span>{{data.caster2.tag}}</span>
+        </div>
     </div>
 </div>
 <script>
