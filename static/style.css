@@ -37,6 +37,13 @@ body {
     padding-left: 20px;
 }
 
+.interviewee .logo {
+   position: absolute;
+   right: 100px;
+   top: -110%;
+   height: 200%;
+}
+
 .interviewee.out {
     right: -20%;
     opacity: 0;
