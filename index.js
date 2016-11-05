@@ -6,4 +6,4 @@ app.listen(3000, function () {
 })
 
 app.use('/', express.static('static'))
-app.use('/js', express.static('node_modules/angular'))
+app.use('/lib', express.static('node_modules/angular'))
