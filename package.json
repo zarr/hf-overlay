@@ -18,7 +18,9 @@
   "homepage": "https://github.com/zarr/hf-overlay#readme",
   "dependencies": {
     "angular": "^1.5.8",
+    "body-parser": "^1.15.2",
     "express": "^4.14.0",
+    "mongodb": "^2.2.11",
     "socket.io": "^1.5.1"
   }
 }

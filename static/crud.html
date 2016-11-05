@@ -1,0 +1,21 @@
+<!doctype html>
+<html ng-app="overlayApp">
+<head>
+    <script src="/lib/angular/angular.js"></script>
+    <script src="crud.js"></script>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div ng-controller="CrudController as data">
+    <div ng-repeat="person in data.persons">
+        <div>{{person}}</div>
+    </div>
+    <div>
+        Add new person:
+        <input type="text" ng-model="data.newPerson.name"><label>Name</label></input>
+        <input type="text" ng-model="data.newPerson.title"><label>Title</label></input>
+        <button ng-click="data.addPerson(data.newPerson)">Add</button>
+    </div>
+</div>
+</body>
+</html>
