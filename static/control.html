@@ -14,8 +14,14 @@
     <div>
         <button ng-click="data.emit('interview', data.interviewPerson)">Interview</button>
     </div>
+    <select ng-model="data.caster1">
+        <option ng-repeat="option in data.persons" value="{{option._id}}">{{option.name}} // {{option.title}}</option>
+    </select>
+    <select ng-model="data.caster2">
+        <option ng-repeat="option in data.persons" value="{{option._id}}">{{option.name}} // {{option.title}}</option>
+    </select>
     <div>
-        <button ng-click="data.emit('casters')">Casters</button>
+        <button ng-click="data.emit('casters', {caster1: data.caster1, caster2: data.caster2})">Casters</button>
     </div>
 </div>
 

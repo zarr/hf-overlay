@@ -5,7 +5,7 @@ html {
 
 body {
     /*font-family: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;*/
-    font-family: "proxima-nova"
+    font-family: "sans-serif";
     overflow: hidden;
     margin: 0px;
 }
@@ -92,11 +92,11 @@ body {
 }
 .caster .caster1 {
     position: absolute;
-    right: 15%;
+    left: 15%;
 }
 .caster .caster2 {
     position: absolute;
-    left: 15%;
+    right: 15%;
 }
 
 .caster .name {

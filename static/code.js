@@ -18,7 +18,7 @@ angular.module('overlayApp', [])
             }
         })
     })
-    .controller('CasterController', function(socket) {
+    .controller('CasterController', function($http, socket) {
         var caster = this;
         caster.caster1 = {
             name: "Matti Mainio",
@@ -35,6 +35,13 @@ angular.module('overlayApp', [])
         }
         socket.on('message', function (msg) {
             if ("casters" == msg.scene) {
+                console.log("caster ids ", msg.id.caster1, msg.id.caster2);
+                $http.get('person/' + msg.id.caster1).success(function (data, status, headers) {
+                    caster.caster1 = data;
+                });
+                $http.get('person/' + msg.id.caster2).success(function (data, status, headers) {
+                    caster.caster2 = data;
+                });
                 caster.enter();
             }
         })
