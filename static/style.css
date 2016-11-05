@@ -7,6 +7,7 @@ body {
     /*font-family: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;*/
     font-family: "proxima-nova"
     overflow: hidden;
+    margin: 0px;
 }
 
 .interviewee {
@@ -40,13 +41,13 @@ body {
 .interviewee .name {
     /*font-size: 200%;*/
     font-size: 6vh;
-    margin-bottom: 10px;
+    margin-bottom: 1.6vh;
     font-weight: bold;
 }
 
 .interviewee .title {
-    font-size: 3vh;
-    padding-left: 20px;
+    font-size: 3.2vh;
+    padding-left: 2vh;
 }
 
 .interviewee .logo {
@@ -66,10 +67,28 @@ body {
 }
 
 .caster {
-    position: absolute;
-    bottom: 10%;
     width: 100%;
-    transition: bottom 1s;
+
+    position: absolute;
+    bottom: 5vh;
+    /*right: 10%;*/
+    transition: bottom 1.6s, opacity 3s;
+    /*height: 10%;*/
+    height: 15vh;
+
+    color: #CCDDDD;
+
+    opacity: 1;
+
+    padding-top: 20px;
+
+    /*background-image: url('/img/duck.png');*/
+
+    background: -moz-linear-gradient(-45deg, rgba(206,4,4,0.5) 0%, rgba(205,5,5,0.5) 1%, rgba(198,12,12,0.7) 11%, rgba(178,30,30,1) 40%, rgba(175,33,33,1) 44%, rgba(234,46,46,1) 100%); /* FF3.6-15 */
+    background: -webkit-linear-gradient(-45deg, rgba(206,4,4,0.5) 0%,rgba(205,5,5,0.5) 1%,rgba(198,12,12,0.7) 11%,rgba(178,30,30,1) 40%,rgba(175,33,33,1) 44%,rgba(234,46,46,1) 100%); /* Chrome10-25,Safari5.1-6 */
+    background: linear-gradient(135deg, rgba(206,4,4,0.5) 0%,rgba(205,5,5,0.5) 1%,rgba(198,12,12,0.7) 11%,rgba(178,30,30,1) 40%,rgba(175,33,33,1) 44%,rgba(234,46,46,1) 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#80ce0404', endColorstr='#ea2e2e',GradientType=1 ); /* IE6-9 fallback on horizontal gradient */<Paste>
+
 }
 .caster .caster1 {
     position: absolute;
@@ -80,6 +99,40 @@ body {
     left: 15%;
 }
 
+.caster .name {
+    /*font-size: 200%;*/
+    font-size: 3.5vh;
+    margin-bottom: 0.6vh;
+    font-weight: bold;
+}
+
+.caster .nick {
+    font-size: 2.4vh;
+    font-style: oblique;
+    margin-bottom: 0.6vh;
+    padding-left: 2vh;
+}
+.caster .nick:before { content: open-quote; }
+.caster .nick:after  { content: close-quote; }
+
+.caster .tag {
+    overflow: hidden;
+    font-size: 2.2vh;
+    padding-left: 2vh;
+}
+.caster .tag:before {
+    background-image: url('/img/twitter.png');
+    background-size: 4vh 4vh;
+    display: inline-block;
+    content:"";
+    /*margin-left: -2vh;*/
+    margin-left: 5px;
+    margin-right: 5px;
+    width: 4vh;
+    height: 4vh;
+    vertical-align: -50%;
+}
+
 .caster.out {
-    bottom: -40%;
+    bottom: -20%;
 }
