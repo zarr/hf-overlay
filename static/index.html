@@ -1,7 +1,8 @@
 <!doctype html>
 <html ng-app="overlayApp">
 <head>
-    <script src="/lib/angular.js"></script>
+    <script src="/lib/angular/angular.js"></script>
+    <script src="/lib/socket.io-client/socket.io.js"></script>
     <script src="code.js"></script>
     <link rel="stylesheet" href="style.css">
 </head>
@@ -12,5 +13,12 @@
         <span>{{data.interviewee.title}}</span>
     </div>
 </div>
+<script>
+    var socket = io();
+    socket.on('toggle', function(x) {
+        console.log("niimpä");
+        toggle();
+    })
+</script>
 </body>
 </html>
