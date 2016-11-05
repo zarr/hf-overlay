@@ -29,14 +29,5 @@
         </div>
     </div>
 </div>
-<script>
-    var socket = io();
-    socket.on('message', function(x) {
-        console.log(x);
-        if(x === "toggle") {
-            toggle();
-        }
-    })
-</script>
 </body>
 </html>

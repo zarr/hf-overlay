@@ -7,15 +7,18 @@
 </head>
 <body>
 <div class=control_panel>
-    <div class="toggle_btn" onclick=send_toggle()>
-        Toggle
+    <div class="toggle_btn" onclick=send_msg('interview')>
+        Interview
+    </div>
+    <div class="toggle_btn" onclick=send_msg('casters')>
+        Casters
     </div>
 </div>
 <script>
     var socket = io();
 
-    var send_toggle = function() {
-        socket.send('toggle')
+    var send_msg = function(msg) {
+        socket.send(msg)
     }
 </script>
 </body>
