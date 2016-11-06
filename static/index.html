@@ -40,5 +40,11 @@
         </div>
     </div>
 </div>
+<div ng-controller="CountdownController as data">
+    <div ng-class="{out: !data.in, in: data.in}" class="countdown">
+        <div>countdown</div>
+        <div>{{data.countdown}}</div>
+    </div>
+</div>
 </body>
 </html>

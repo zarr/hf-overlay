@@ -16,6 +16,14 @@
         </div>
     </div>
     <div>
+        <h4>Countdown</h4>
+        <input ng-model="data.targetMinutes"> minutes
+        <div>
+            <button ng-click="data.emit('countdown', 'in', data.targetMinutes)">In</button>
+            <button ng-click="data.emit('countdown', 'out')">Out</button>
+        </div>
+    </div>
+    <div>
         <h4>Interview</h4>
         <select ng-model="data.interviewPerson">
             <option ng-repeat="option in data.persons" value="{{option._id}}">{{option.name}} // {{option.title}}</option>
