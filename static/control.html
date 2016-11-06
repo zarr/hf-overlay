@@ -29,7 +29,7 @@
             <option ng-repeat="option in data.persons" value="{{option._id}}">{{option.name}} // {{option.title}}</option>
         </select>
         <div>
-            <button ng-click="data.emit('interview', 'in', data.interviewPerson)">In</button>
+            <button ng-disabled="! data.interviewPerson" ng-click="data.emit('interview', 'in', data.interviewPerson)">In</button>
             <button ng-click="data.emit('interview', 'out')">Out</button>
         </div>
     </div>
@@ -42,7 +42,7 @@
             <option ng-repeat="option in data.persons" value="{{option._id}}">{{option.name}} // {{option.nick}} // {{option.tag}}</option>
         </select>
         <div>
-            <button ng-click="data.emit('casters', 'in', {caster1: data.caster1, caster2: data.caster2})">In</button>
+            <button ng-disabled="! data.caster1 || ! data.caster2" ng-click="data.emit('casters', 'in', {caster1: data.caster1, caster2: data.caster2})">In</button>
             <button ng-click="data.emit('casters', 'out')">Out</button>
         </div>
     </div>
