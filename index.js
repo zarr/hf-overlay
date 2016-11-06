@@ -54,6 +54,20 @@ app.get('/person/:personId', function (req, res) {
   });
 });
 
+app.delete('/person/:personId', function (req, res) {
+  console.log('delete person', req.params.personId);
+  MongoClient.connect(url, function (err, db) {
+    if (err) throw err;
+
+    db.collection('persons').remove({"_id": new ObjectId(req.params.personId)}, function (err, result) {
+      if (err) throw err;
+
+      console.log(result);
+      res.send(result);
+    })
+  });
+});
+
 app.post('/persons', function (req, res) {
   console.log('body ', req.body);
   MongoClient.connect(url, function(err, db) {
@@ -64,6 +78,7 @@ app.post('/persons', function (req, res) {
         function(err, result) {
           assert.equal(err, null);
           console.log("Inserted a person.");
+          res.send(result);
         });
     db.close();
   });

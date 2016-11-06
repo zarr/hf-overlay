@@ -8,15 +8,18 @@
 <body>
 <div ng-controller="CrudController as data">
     <div ng-repeat="person in data.persons">
-        <div>{{person}}</div>
+        <div>
+            {{person.name}} // {{person.title}} // {{person.nick}} // {{person.tag}}
+            <button ng-click="data.deletePerson(person._id)">delete</button>
+        </div>
     </div>
     <div>
         Add new person:
-        <input type="text" ng-model="data.newPerson.name"><label>Name</label></input>
-        <input type="text" ng-model="data.newPerson.title"><label>Title</label></input>
-        <input type="text" ng-model="data.newPerson.nick"><label>Nick</label></input>
-        <input type="text" ng-model="data.newPerson.tag"><label>Hashtag</label></input>
-        <button ng-click="data.addPerson(data.newPerson)">Add</button>
+        <div><input type="text" ng-model="data.newPerson.name"><label>Name</label></div>
+        <div><input type="text" ng-model="data.newPerson.title"><label>Title</label></div>
+        <div><input type="text" ng-model="data.newPerson.nick"><label>Nick</label></div>
+        <div><input type="text" ng-model="data.newPerson.tag"><label>Hashtag</label></div>
+        <div><button ng-click="data.addPerson(data.newPerson)">Add</button></div>
     </div>
 </div>
 </body>
