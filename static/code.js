@@ -34,6 +34,23 @@ angular.module('overlayApp', [])
             }
         })
     })
+    .controller('ClockController', function($http, socket, $interval) {
+        var that = this;
+        $interval(updateTime, 500);
+        function updateTime() {
+            that.time = moment().format("HH:mm:ss");
+        }
+        socket.on('message', function (msg) {
+            if ("clock" == msg.scene) {
+                if ("in" == msg.direction) {
+                    console.log("clock in");
+                    that.in = true;
+                } else if ("out" == msg.direction) {
+                    that.in = false;
+                }
+            }
+        })
+    })
     .factory('socket', function ($rootScope) {
         var socket = io.connect();
         return {

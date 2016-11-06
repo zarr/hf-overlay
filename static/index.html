@@ -3,6 +3,7 @@
 <head>
     <script src="/lib/angular/angular.js"></script>
     <script src="/lib/socket.io-client/socket.io.js"></script>
+    <script src="/lib/moment/moment.js"></script>
     <script src="code.js"></script>
     <link rel="stylesheet" href="style.css">
 </head>
@@ -27,6 +28,11 @@
             <div class=nick>{{data.caster2.nick}}</div>
             <div class=tag>{{data.caster2.tag}}</div>
         </div>
+    </div>
+</div>
+<div ng-controller="ClockController as data">
+    <div class="clock">
+        {{data.time}}
     </div>
 </div>
 </body>
