@@ -31,8 +31,9 @@
     </div>
 </div>
 <div ng-controller="ClockController as data">
-    <div class="clock">
+    <div ng-class="{out: !data.in, in: data.in}" class="clock">
         {{data.time}}
+        {{data.timezone}}
     </div>
 </div>
 </body>

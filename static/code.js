@@ -38,7 +38,9 @@ angular.module('overlayApp', [])
         var that = this;
         $interval(updateTime, 500);
         function updateTime() {
-            that.time = moment().format("HH:mm:ss");
+            var now = moment();
+            that.time = now.format("HH:mm:ss");
+            that.timezone = now.format("[UTC]Z");
         }
         socket.on('message', function (msg) {
             if ("clock" == msg.scene) {
@@ -46,6 +48,7 @@ angular.module('overlayApp', [])
                     console.log("clock in");
                     that.in = true;
                 } else if ("out" == msg.direction) {
+                    console.log("clock out");
                     that.in = false;
                 }
             }
