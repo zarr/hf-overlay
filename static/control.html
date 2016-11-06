@@ -8,20 +8,28 @@
 </head>
 <body>
 <div ng-controller="ControlController as data" class=control_panel>
-    <select ng-model="data.interviewPerson">
-        <option ng-repeat="option in data.persons" value="{{option._id}}">{{option.name}} // {{option.title}}</option>
-    </select>
     <div>
-        <button ng-click="data.emit('interview', data.interviewPerson)">Interview</button>
+        <h4>Interview</h4>
+        <select ng-model="data.interviewPerson">
+            <option ng-repeat="option in data.persons" value="{{option._id}}">{{option.name}} // {{option.title}}</option>
+        </select>
+        <div>
+            <button ng-click="data.emit('interview', 'in', data.interviewPerson)">In</button>
+            <button ng-click="data.emit('interview', 'out', data.interviewPerson)">Out</button>
+        </div>
     </div>
-    <select ng-model="data.caster1">
-        <option ng-repeat="option in data.persons" value="{{option._id}}">{{option.name}} // {{option.title}}</option>
-    </select>
-    <select ng-model="data.caster2">
-        <option ng-repeat="option in data.persons" value="{{option._id}}">{{option.name}} // {{option.title}}</option>
-    </select>
     <div>
-        <button ng-click="data.emit('casters', {caster1: data.caster1, caster2: data.caster2})">Casters</button>
+        <h4>Casters</h4>
+        <select ng-model="data.caster1">
+            <option ng-repeat="option in data.persons" value="{{option._id}}">{{option.name}} // {{option.nick}} // {{option.tag}}</option>
+        </select>
+        <select ng-model="data.caster2">
+            <option ng-repeat="option in data.persons" value="{{option._id}}">{{option.name}} // {{option.nick}} // {{option.tag}}</option>
+        </select>
+        <div>
+            <button ng-click="data.emit('casters', 'in', {caster1: data.caster1, caster2: data.caster2})">In</button>
+            <button ng-click="data.emit('casters', 'out', {caster1: data.caster1, caster2: data.caster2})">Out</button>
+        </div>
     </div>
 </div>
 

@@ -4,10 +4,11 @@ angular.module('overlayApp', [])
         $http.get('persons').success(function (data, status, headers) {
             that.persons = data;
         });
-        that.emit = function (msg, data) {
+        that.emit = function (msg, direction, data) {
             console.log('message: ', msg, data);
             socket.emit('message', {
                 scene: msg,
+                direction: direction,
                 id: data
             });
         }
