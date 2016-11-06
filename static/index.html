@@ -8,7 +8,6 @@
 </head>
 <body>
 <div ng-controller="IntervieweeController as data">
-    <button ng-click="data.enter()">push</button>
     <div ng-class="{out: !data.in, in: data.in}" class="interviewee">
         <div class=name>{{data.interviewee.name}}</div>
         <div class=title>{{data.interviewee.title}}</div>
@@ -16,7 +15,6 @@
     </div>
 </div>
 <div ng-controller="CasterController as data">
-    <button ng-click="data.enter()">push</button>
     <div ng-class="{out: !data.in, in: data.in}" class="caster">
         <div class="caster1">
             <div class=name>{{data.caster1.name}}</div>
