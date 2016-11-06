@@ -1,6 +1,6 @@
 
 html {
-   overflow: hidden;
+    overflow: hidden;
 }
 
 body {
@@ -8,6 +8,7 @@ body {
     font-family: "sans-serif";
     overflow: hidden;
     margin: 0px;
+    color: #CCDDDD;
 }
 
 .interviewee {
@@ -20,7 +21,6 @@ body {
     /*height: 10%;*/
     height: 15vh;
 
-    color: #CCDDDD;
 
     opacity: 1;
 
@@ -51,20 +51,20 @@ body {
 }
 
 .interviewee .logo {
-   position: absolute;
-   right: 50px;
-   top: -115%;
-   height: 200%;
-   -moz-transform: scaleX(-1);
-   -o-transform: scaleX(-1);
-   -webkit-transform: scaleX(-1);
-   transform: scaleX(-1);
-   z-index: 10;
+    position: absolute;
+    right: 50px;
+    top: -115%;
+    height: 200%;
+    -moz-transform: scaleX(-1);
+    -o-transform: scaleX(-1);
+    -webkit-transform: scaleX(-1);
+    transform: scaleX(-1);
+    z-index: 10;
 }
 
 .interviewee .logo.shadow {
-   filter: blur(10px);
-   z-index: 8;
+    filter: blur(10px);
+    z-index: 8;
 }
 
 .interviewee.out {
@@ -141,4 +141,27 @@ body {
 
 .caster.out {
     bottom: -20%;
+}
+
+.clock {
+    position: absolute;
+    top: 5vh;
+    right: 5vh;
+    background: -moz-linear-gradient(-45deg, rgba(206,4,4,0.5) 0%, rgba(205,5,5,0.5) 1%, rgba(198,12,12,0.7) 11%, rgba(178,30,30,1) 40%, rgba(175,33,33,1) 44%, rgba(234,46,46,1) 100%); /* FF3.6-15 */
+    background: -webkit-linear-gradient(-45deg, rgba(206,4,4,0.5) 0%,rgba(205,5,5,0.5) 1%,rgba(198,12,12,0.7) 11%,rgba(178,30,30,1) 40%,rgba(175,33,33,1) 44%,rgba(234,46,46,1) 100%); /* Chrome10-25,Safari5.1-6 */
+    background: linear-gradient(135deg, rgba(206,4,4,0.5) 0%,rgba(205,5,5,0.5) 1%,rgba(198,12,12,0.7) 11%,rgba(178,30,30,1) 40%,rgba(175,33,33,1) 44%,rgba(234,46,46,1) 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#80ce0404', endColorstr='#ea2e2e',GradientType=1 ); /* IE6-9 fallback on horizontal gradient */<Paste>
+}
+
+.clock .time {
+    font-weight: bold;
+    padding: 15px;
+    font-size: 4vh;
+}
+
+.clock .timezone {
+    padding-bottom: 15px;
+    font-size: 2vh;
+    margin: auto;
+    text-align: center;
 }
