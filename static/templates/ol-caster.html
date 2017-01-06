@@ -1,0 +1,15 @@
+<div ng-controller="CasterController as data">
+    <div ng-class="{out: !data.in, in: data.in}" class="caster">
+        <div class="caster1">
+            <div class=name>{{data.caster1.name}}</div>
+            <!--- TODO: Create a "non-empty" attribute that hides empty tags -->
+            <div class=nick ng-show=data.caster1.nick>{{data.caster1.nick}}</div>
+            <div class=tag ng-show=data.caster1.tag>{{data.caster1.tag}}</div>
+        </div>
+        <div class="caster2">
+            <div class=name>{{data.caster2.name}}</div>
+            <div class=nick ng-show=data.caster2.nick>{{data.caster2.nick}}</div>
+            <div class=tag ng-show=data.caster2.tag>{{data.caster2.tag}}</div>
+        </div>
+    </div>
+</div>

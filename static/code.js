@@ -15,6 +15,12 @@ angular.module('overlayApp', [])
             }
         })
     })
+    .directive('olInterviewee', function() {
+        return {
+            restrict: 'E',
+            templateUrl: 'templates/ol-interviewee.html'
+        };
+    })
     .controller('CasterController', function($http, socket) {
         var caster = this;
         socket.on('message', function (msg) {
@@ -33,6 +39,12 @@ angular.module('overlayApp', [])
                 }
             }
         })
+    })
+    .directive('olCaster', function() {
+        return {
+            restrict: 'E',
+            templateUrl: 'templates/ol-caster.html'
+        };
     })
     .controller('ClockController', function($http, socket, $interval) {
         var that = this;
@@ -53,6 +65,12 @@ angular.module('overlayApp', [])
                 }
             }
         })
+    })
+    .directive('olClock', function() {
+        return {
+            restrict: 'E',
+            templateUrl: 'templates/ol-clock.html'
+        };
     })
     .controller('CountdownController', function($http, socket, $interval) {
         var that = this;
@@ -92,6 +110,12 @@ angular.module('overlayApp', [])
                 }
             }
         })
+    })
+    .directive('olCountdown', function() {
+        return {
+            restrict: 'E',
+            templateUrl: 'templates/ol-countdown.html'
+        };
     })
     .factory('socket', function ($rootScope) {
         var socket = io.connect();
