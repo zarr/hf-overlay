@@ -1,8 +1,8 @@
 angular.module('overlayApp', [])
     .controller('ControlController', function($http, socket) {
         var that = this;
-        $http.get('persons').success(function (data, status, headers) {
-            that.persons = data;
+        $http.get('persons').then(function (response) {
+            that.persons = response.data;
         });
         that.emit = function (msg, direction, data) {
             console.log('message: ', msg, data);

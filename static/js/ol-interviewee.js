@@ -5,8 +5,8 @@ angular.module('overlayApp')
             if ("interview" == msg.scene) {
                 if ("in" == msg.direction) {
                     console.log("show id ", msg.id);
-                    $http.get('person/' + msg.id).success(function (data, status, headers) {
-                        interviewee.interviewee = data;
+                    $http.get('person/' + msg.id).then(function (response) {
+                        interviewee.interviewee = response.data;
                     });
                     interviewee.in = true;
                 } else if ("out" == msg.direction) {

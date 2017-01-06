@@ -4,7 +4,9 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "prestart": "webpack",
+    "start": "node index.js"
   },
   "repository": {
     "type": "git",
@@ -23,5 +25,8 @@
     "moment": "^2.15.2",
     "mongodb": "^2.2.11",
     "socket.io": "^1.5.1"
+  },
+  "devDependencies": {
+    "webpack": "^2.2.0-rc.3"
   }
 }

@@ -23,3 +23,9 @@ angular.module('overlayApp', [])
             }
         };
 });
+
+// import all features
+function importAll (r) {
+    r.keys().forEach(r);
+}
+importAll(require.context('../static/js/', true, /\.js$/));
